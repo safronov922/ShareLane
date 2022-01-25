@@ -3,9 +3,19 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class SignUpTest {
+    WebDriver driver;
+
+    @BeforeMethod
+    public void setUp() {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        driver = new ChromeDriver();
+    }
+
     @Test
     public void sendFiveDigitsToZipCodeTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -21,6 +31,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isRegisterButtonDisplayed, "Register button isn't shown");
     }
+
     @Test
     public void sendFourDigitsToZipcodeTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -36,6 +47,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shown");
     }
+
     @Test
     public void sendSignUpFormTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -59,6 +71,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isSuccessMassageShown, "Success message isn't shown");
     }
+
     @Test
     public void sendTextZipCodeTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -74,6 +87,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shown");
     }
+
     @Test
     public void sendEmptyZipCodeTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -87,6 +101,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shown");
     }
+
     @Test
     public void openShoppingChatTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -100,6 +115,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shown");
     }
+
     @Test
     public void searchWithoutDataTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -113,6 +129,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shown");
     }
+
     @Test
     public void searchWithUnavailableDataTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -128,6 +145,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isConfirmShown, "Confirmation message isn't shown");
     }
+
     @Test
     public void logInWithoutDataTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -141,6 +159,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shown");
     }
+
     @Test
     public void sendSignUpFormWithoutNameTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -163,6 +182,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shown");
     }
+
     @Test
     public void sendSignUpFormWithoutEmailTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -185,6 +205,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shown");
     }
+
     @Test
     public void sendSignUpFormWithoutPasswordTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -207,6 +228,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shown");
     }
+
     @Test
     public void sendSignUpFormWithoutLastNameTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -230,6 +252,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isSuccessMassageShown, "Success message isn't shown");
     }
+
     @Test
     public void sendEmptySignUpFormTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -247,6 +270,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shown");
     }
+
     @Test
     public void sendZipCodeWithInvalidDataTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -262,6 +286,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shown");
     }
+
     @Test
     public void sendWithoutConfirmPasswordsSignUpFormTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -284,6 +309,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shown");
     }
+
     @Test
     public void sendDifferentPasswordsSignUpFormTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -307,6 +333,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shown");
     }
+
     @Test
     public void sendInvalidEmailSignUpFormTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -330,6 +357,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shown");
     }
+
     @Test
     public void sendInvalidNameSignUpFormTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -353,6 +381,7 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shownnn");
     }
+
     @Test
     public void sendInvalidLastNameSignUpFormTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -376,26 +405,37 @@ public class SignUpTest {
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shown");
     }
+
     @Test
-    public void sendSixDigitsToZipcodeTest () throws NoSuchElementException {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+    public void sendSixDigitsToZipcodeTest() throws NoSuchElementException {
         // Open Zip code page
         driver.get("https://www.sharelane.com/cgi-bin/register.py");
         // Input 3 digits zip
-        driver.findElement(By.name("zip_code")).sendKeys("123456");
+        sendZipCode("1256");
         // Click the 'Continue'
         driver.findElement(By.cssSelector("[value=Continue]")).click();
         // Error message is shown
         try {
             driver.findElement(By.className("error_message")).isDisplayed();
-        }
-            catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             Assert.fail("Bug");
         }
-        finally {
+        /*finally {
             driver.quit();
-        }
+        } */
+    }
+
+    private void sendZipCode(String zipCode) {
+        // Input 3 digits zip
+        driver.findElement(By.name("zip_code")).sendKeys(zipCode);
+        // Click the 'Continue'
+        driver.findElement(By.cssSelector("[value=Continue]")).click();
+
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        driver.quit();
     }
 }
 
