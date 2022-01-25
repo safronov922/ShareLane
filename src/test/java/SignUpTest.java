@@ -351,7 +351,7 @@ public class SignUpTest {
         // Error message is shown
         boolean isErrorShown = driver.findElement(By.className("error_message")).isDisplayed();
         driver.quit();
-        Assert.assertTrue(isErrorShown, "Error message isn't shownn");
+        Assert.assertTrue(isErrorShown, "Error message isn't shownnn");
     }
     @Test
     public void sendInvalidLastNameSignUpFormTest() {
