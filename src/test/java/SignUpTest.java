@@ -30,7 +30,7 @@ public class SignUpTest {
         // Check that register button is shown
         boolean isRegisterButtonDisplayed = driver.findElement(By.cssSelector("[value=Register]")).isDisplayed();
         driver.quit();
-        Assert.assertTrue(isRegisterButtonDisplayed, "Register button isыn't shown");
+        Assert.assertTrue(isRegisterButtonDisplayed, "Register button issыn't shown");
     }
 
     @Test
