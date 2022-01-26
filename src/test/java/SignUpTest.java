@@ -46,7 +46,7 @@ public class SignUpTest {
         // Error message is shown
         boolean isErrorShown = driver.findElement(By.className("error_message")).isDisplayed();
         driver.quit();
-        Assert.assertTrue(isErrorShown, "Error message isn't shown");
+        Assert.assertTrue(isErrorShown, "Error message isn't shaown");
     }
 
     @Test
