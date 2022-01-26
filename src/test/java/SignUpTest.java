@@ -16,6 +16,7 @@ public class SignUpTest {
         driver = new ChromeDriver();
     }
 
+
     @Test
     public void sendFiveDigitsToZipCodeTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -29,7 +30,7 @@ public class SignUpTest {
         // Check that register button is shown
         boolean isRegisterButtonDisplayed = driver.findElement(By.cssSelector("[value=Register]")).isDisplayed();
         driver.quit();
-        Assert.assertTrue(isRegisterButtonDisplayed, "Register button isn't shown");
+        Assert.assertTrue(isRegisterButtonDisplayed, "Register button isыn't shown");
     }
 
     @Test
