@@ -44,7 +44,7 @@ public class SignUpTest {
         // Click the 'Continue'
         driver.findElement(By.cssSelector("[value=Continue]")).click();
         // Error message is shown
-        boolean isErrorShown = driver.findElement(By.className("erroer_message")).isDisplayed();
+        boolean isErrorShown = driver.findElement(By.className("error_message")).isDisplayed();
         driver.quit();
         Assert.assertTrue(isErrorShown, "Error message isn't shaown");
     }
